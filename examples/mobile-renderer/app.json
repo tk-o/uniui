@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "fin-earn",
-    "slug": "fin-earn",
+    "name": "mobile-renderer",
+    "slug": "mobile-renderer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

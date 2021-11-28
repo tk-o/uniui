@@ -1,0 +1,24 @@
+{
+  "name": "@uniui/heading-web",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "compile": "parcel build"
+  },
+  "dependencies": {
+    "@uniui/heading-core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "parcel": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
