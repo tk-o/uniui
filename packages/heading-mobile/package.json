@@ -9,7 +9,8 @@
     "compile": "parcel build"
   },
   "dependencies": {
-    "@uniui/heading-core": "^1.0.0"
+    "@uniui/heading-core": "^1.0.0",
+    "@uniui/theme-mobile": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",

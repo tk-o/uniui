@@ -1,5 +1,13 @@
 import type { UseTheme, UseThemeProps, UseThemeResult as GenericUseThemeResult } from "@uniui/theme-core";
-import tw from "twrnc";
+import { config as baseConfig } from "@uniui/theme-core";
+import { create, plugin } from "twrnc";
+
+console.log('base config', baseConfig)
+
+const tw = create({
+  // @ts-ignore
+  plugins: baseConfig.plugins.map(pluginFn => plugin(pluginFn))
+})
 
 type ClassNamesArgs = Parameters<GenericUseThemeResult['classNames']>
 

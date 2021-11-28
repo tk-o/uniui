@@ -7,7 +7,7 @@ import { useThemeHook } from "@uniui/theme-web";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const { classNames } = useThemeHook();
+  const { classNames: cx } = useThemeHook();
   return (
     <div className={styles.container}>
       <Head>
@@ -17,8 +17,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Heading level={HeadingLevel.H1}>
-          <span className={classNames([{'my-16': true}, 'text-red-500', 'inline-block'])}>Yo</span>
+        <Heading
+          level={HeadingLevel.H4}
+          className={cx(["text-red-500"])}
+        >
+          Yo
         </Heading>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

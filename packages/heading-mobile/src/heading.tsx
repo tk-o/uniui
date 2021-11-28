@@ -1,23 +1,48 @@
 import * as React from "react";
 import { Text } from "react-native";
-import { HeadingLevel, HeadingProps } from "@uniui/heading-core";
+import {
+  HeadingLevel,
+  HeadingProps as HeadingPropsBase,
+} from "@uniui/heading-core";
+import { useThemeHook } from "@uniui/theme-mobile";
 
 export { HeadingLevel } from "@uniui/heading-core";
 
-export function Heading({ children, level }: HeadingProps) {
-  let fontSize: number;
+export type HeadingProps = HeadingPropsBase & Text["props"];
 
+export function Heading({ children, level, style, ...props }: HeadingProps) {
+  const { classNames } = useThemeHook();
+
+  console.log({ style });
+
+  // let extendStyle = (styleExtension) => sx([
+  //   [styleExtension],
+  //   //@ts-ignore
+  //   // ...style,
+  // ]);
+
+  let extendedStyle;
   switch (level) {
     case HeadingLevel.H1:
-      fontSize = 48
+      extendedStyle = { "text-xl": true };
     case HeadingLevel.H2:
-      fontSize = 36
+      extendedStyle = { "text-lg": true };
     case HeadingLevel.H3:
-      fontSize = 24
+      extendedStyle = { "text-base": true };
     case HeadingLevel.H4:
     default:
-      fontSize = 18
+      extendedStyle = { "text-sm": true };
   }
 
-  return <Text style={[{fontSize}]}>{children}</Text>;
+  console.log(extendedStyle)
+
+  return (
+    <Text
+    //@ts-ignore
+      style={[ ...style, [extendedStyle]]}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
 }
