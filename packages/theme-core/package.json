@@ -1,0 +1,19 @@
+{
+  "name": "@uniui/theme-core",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "compile": "parcel build"
+  },
+  "devDependencies": {
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "classnames": "^2.3.1",
+    "tailwindcss": "^2.2.19"
+  }
+}

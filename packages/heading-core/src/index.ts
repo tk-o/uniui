@@ -8,5 +8,5 @@ export enum HeadingLevel {
 }
 export interface HeadingProps
   extends React.PropsWithChildren<{
-    level: HeadingLevel;
+    level?: HeadingLevel;
   }> {}
