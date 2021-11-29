@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "projects": {
+    "mobiles": {
+      "root": "apps/mobiles",
+      "sourceRoot": "apps/mobiles/src",
+      "projectType": "application",
+      "generators": {},
+      "targets": {
+        "bundle": {
+          "executor": "nx-react-native-expo:bundle",
+          "options": {}
+        },
+        "start": {
+          "executor": "nx-react-native-expo:start",
+          "options": {}
+        },
+        "run-ios": {
+          "executor": "nx-react-native-expo:run-ios",
+          "options": {}
+        },
+        "run-android": {
+          "executor": "nx-react-native-expo:run-android",
+          "options": {}
+        },
+        "run-web": {
+          "executor": "nx-react-native-expo:run-web",
+          "options": {}
+        },
+        "publish": {
+          "executor": "nx-react-native-expo:publish",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mobiles/**/*.{js,ts,tsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/mobiles"
+          ],
+          "options": {
+            "jestConfig": "apps/mobiles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-button-mobile": {
+      "root": "libs/ui-button-mobile",
+      "sourceRoot": "libs/ui-button-mobile/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-button-mobile/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/ui-button-mobile"
+          ],
+          "options": {
+            "jestConfig": "libs/ui-button-mobile/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "website": "apps/website",
+    "website-e2e": "apps/website-e2e"
+  }
+}
